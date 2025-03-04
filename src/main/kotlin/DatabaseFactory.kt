@@ -9,10 +9,10 @@ import org.jetbrains.exposed.sql.transactions.transaction
 object DatabaseFactory {
     fun init() {
         val config = HikariConfig().apply {
-            jdbcUrl = "jdbc:mysql://localhost:3306/dummy"
+            jdbcUrl = "jdbc:mysql://localhost:3306/testbuddy"
             driverClassName = "com.mysql.cj.jdbc.Driver"
             username = "root"
-            password = "AmanKumar@123"
+            password = "password"
             maximumPoolSize = 10
         }
         val dataSource = HikariDataSource(config)
