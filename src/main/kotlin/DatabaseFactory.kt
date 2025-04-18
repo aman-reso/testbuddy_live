@@ -12,7 +12,7 @@ object DatabaseFactory {
             jdbcUrl = "jdbc:mysql://localhost:3306/testbuddy"
             driverClassName = "com.mysql.cj.jdbc.Driver"
             username = "root"
-            password = "password"
+            password = "AmanKumar@123"
             maximumPoolSize = 10
         }
         val dataSource = HikariDataSource(config)

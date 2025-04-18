@@ -8,11 +8,12 @@ import io.ktor.server.plugins.contentnegotiation.*
 import io.ktor.server.response.*
 import io.ktor.server.websocket.*
 import livetest.configureWebSockets
+import peer2peer.peer2Peer
 import routing.configureRouting
 import java.time.Duration
 
 fun main() {
-    embeddedServer(Netty, port = 8081, module = Application::module).start(wait = true)
+    embeddedServer(Netty, port = 8080, module = Application::module).start(wait = true)
 }
 
 fun Application.module() {
@@ -25,8 +26,9 @@ fun Application.module() {
         maxFrameSize = Long.MAX_VALUE
         masking = false
     }
-    DatabaseFactory.init()
-    configureRouting()
-    configureWebSockets()
+    peer2Peer()
+//    DatabaseFactory.init()
+//    configureRouting()
+//    configureWebSockets()
 }
 
